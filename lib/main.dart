@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             title: 'PokeView',
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              colorScheme:
+                  ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),
               useMaterial3: true,
             ),
             home: const NavigationControl(),
