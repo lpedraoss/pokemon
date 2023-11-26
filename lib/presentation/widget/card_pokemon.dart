@@ -16,7 +16,8 @@ class _CardPokemonState extends State<CardPokemon> {
   int _counter = 1;
   Pokemon? pokemon;
 /*   String? namePokemon; */
-  void _getPokemon({required Status? status}) async {
+  void _getPokemon({Status? status}) async {
+    status ?? (status = Status.inProcess);
     status == Status.increment
         ? _counter++
         : status == Status.decrement
@@ -25,15 +26,12 @@ class _CardPokemonState extends State<CardPokemon> {
                 : null
             : null;
     pokemon = await PokemonService().getPokemon(idPokemon: _counter);
-    setState(() {
-/*       namePokemon = pokemon?.name ?? "no conection"; */
-    });
+    setState(() {});
   }
 
   @override
   void initState() {
-    var initialStatus = Status.inProcess;
-    _getPokemon(status: initialStatus);
+    _getPokemon();
     super.initState();
   }
 
