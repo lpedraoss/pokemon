@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokemon/bloc/color_settings/color_settings_bloc.dart';
 import 'package:pokemon/bloc/counter/counter_cubit.dart';
 import 'package:pokemon/routes/navigation_control.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => CounterCubit(),
+            ),
+            BlocProvider(
+              create: (_) => ColorSettingsBloc(),
+              /* child: const HellowScreen(), */
             ),
           ],
           child: MaterialApp(

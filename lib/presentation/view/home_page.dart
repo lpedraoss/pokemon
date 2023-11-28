@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokemon/bloc/counter/counter_cubit.dart';
 import 'package:pokemon/presentation/widget/card_pokemon.dart';
+import 'package:pokemon/presentation/widget/color_selection.dart';
 import 'package:pokemon/utils/status.enum.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -33,6 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
             body: Column(
               children: [
                 const CardPokemon(),
+                const ColorBox(),
+                ColorSelection(),
                 FloatingActionButton(
                   onPressed: () {
                     widget.onNavigate("helloScreen");
